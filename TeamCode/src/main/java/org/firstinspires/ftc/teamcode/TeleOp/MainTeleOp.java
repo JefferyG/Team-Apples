@@ -32,7 +32,7 @@ public class MainTeleOp extends OpMode {
 
     @Override
     public void loop() {
-        if (Math.abs(gamepad1.left_stick_x) {
+        if (Math.abs(gamepad1.left_stick_x) > .1) {
             lb.setPower(gamepad1.left_stick_y);
             lf.setPower(gamepad1.left_stick_y);
             rb.setPower(gamepad1.left_stick_y);
