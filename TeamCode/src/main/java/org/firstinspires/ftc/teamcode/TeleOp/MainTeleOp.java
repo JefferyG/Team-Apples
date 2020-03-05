@@ -47,16 +47,20 @@ public class MainTeleOp extends OpMode {
             rb.setPower(0);
             rf.setPower(0);
         }
-        if ((gamepad1.right_stick_x) >.1) {
-            lb.setPower(0.75);
-            lf.setPower(0.75);
+        if ((gamepad1.right_stick_x) < -.1) {
+            lb.setPower(1);
+            lf.setPower(1);
+            rb.setPower(-1);
+            rf.setPower(-1);
         } else {
             lb.setPower(0);
             lf.setPower(0);
         }
-       if ((gamepad1.right_stick_x)< -.1) {
-           rb.setPower(0.75);
-           rf.setPower(0.75);
+       if ((gamepad1.right_stick_x) > .1) {
+           rb.setPower(1);
+           rf.setPower(1);
+           lb.setPower(-1);
+           lf.setPower(-1);
        } else {
            rb.setPower(0);
            rf.setPower(0);
