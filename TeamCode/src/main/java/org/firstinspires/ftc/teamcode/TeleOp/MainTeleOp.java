@@ -43,15 +43,13 @@ public class MainTeleOp extends OpMode {
             rb.setPower(0);
             rf.setPower(0);
         }
-        
+
     }
 
     @Override
     public void stop() {
 
     }
-    
+
 
 }
-
-
