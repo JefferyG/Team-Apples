@@ -24,6 +24,10 @@ public class MainTeleOp extends OpMode {
         lf = hardwareMap.dcMotor.get("lf");
         rb = hardwareMap.dcMotor.get("rb");
         rf = hardwareMap.dcMotor.get("rf");
+        lb.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        lf.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rb.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rf.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rb.setDirection(DcMotorSimple.Direction.REVERSE);
         rf.setDirection(DcMotorSimple.Direction.REVERSE);
 
