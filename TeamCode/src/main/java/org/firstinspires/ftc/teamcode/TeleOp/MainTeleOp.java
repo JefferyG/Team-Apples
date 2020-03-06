@@ -41,7 +41,7 @@ public class MainTeleOp extends OpMode {
             lf.setPower(gamepad1.left_stick_y);
             rb.setPower(gamepad1.left_stick_y);
             rf.setPower(gamepad1.left_stick_y);
-      } else {
+        } else {
             lb.setPower(0);
             lf.setPower(0);
             rb.setPower(0);
@@ -53,22 +53,6 @@ public class MainTeleOp extends OpMode {
             rb.setPower(-1);
             rf.setPower(-1);
         } else if ((gamepad1.right_stick_x) > .1) {
-                rb.setPower(1);
-                rf.setPower(1);
-                lb.setPower(-1);
-                lf.setPower(-1);
-        } else {
-            lb.setPower(0);
-            lf.setPower(0);
-            rb.setPower(0);
-            rf.setPower(0);
-        }
-        if ((gamepad1.right_stick_x) > .1) {
-            lb.setPower(1);
-            lf.setPower(1);
-            rb.setPower(-1);
-            rf.setPower(-1);
-        } else if ((gamepad1.right_stick_x) < -.1) {
             rb.setPower(1);
             rf.setPower(1);
             lb.setPower(-1);
@@ -78,7 +62,13 @@ public class MainTeleOp extends OpMode {
             lf.setPower(0);
             rb.setPower(0);
             rf.setPower(0);
-
+        }
+      
+        telemetry.addData("lbPower:", lb.getPower());
+        telemetry.addData("rbPower:", rb.getPower());
+        telemetry.addData("lfPower:", lf.getPower());
+        telemetry.addData("rfPower:", rf.getPower());
+        telemetry.update();
     }
 
     @Override
@@ -86,5 +76,5 @@ public class MainTeleOp extends OpMode {
 
     }
 
-
 }
+
