@@ -36,6 +36,19 @@ public class MainTeleOp extends OpMode {
 
     @Override
     public void loop() {
+
+       double throttle = gamepad1.left_stick_y;
+        double turn     = gamepad1.right_stick_x;
+
+        double leftspeed  = throttle - turn;
+        double rightspeed = throttle + turn;
+
+        lb.setPower(leftspeed);
+        lf.setPower(leftspeed);
+        rb.setPower(rightspeed);
+        rf.setPower(rightspeed);
+/*
+
         if (Math.abs(gamepad1.left_stick_y) > .1) {
             lb.setPower(gamepad1.left_stick_y);
             lf.setPower(gamepad1.left_stick_y);
@@ -63,13 +76,15 @@ public class MainTeleOp extends OpMode {
             rb.setPower(0);
             rf.setPower(0);
         }
-      
+*/
+
         telemetry.addData("lbPower:", lb.getPower());
         telemetry.addData("rbPower:", rb.getPower());
         telemetry.addData("lfPower:", lf.getPower());
         telemetry.addData("rfPower:", rf.getPower());
         telemetry.update();
     }
+
 
     @Override
     public void stop() {
